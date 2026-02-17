@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://ca35hxjvfngex"]
+
+[ext_resource type="Texture2D" uid="uid://bar767f0anxxk" path="res://Assets/Act 1/act1-bg.png" id="1_jhd6h"]
+[ext_resource type="Script" uid="uid://c5wt622dosjek" path="res://Scripts/Act 1/level_1.gd" id="1_wx7h4"]
+[ext_resource type="Texture2D" uid="uid://dfqux0hds80hr" path="res://Assets/Act 1/parallax-1.png" id="2_pu8r1"]
+[ext_resource type="PackedScene" uid="uid://ba5swxo8d6ijd" path="res://Scenes/Act 1/star.tscn" id="2_vo1w2"]
+[ext_resource type="Texture2D" uid="uid://8tqpkdiw034h" path="res://Assets/Act 1/surface-beta.png" id="3_380g0"]
+[ext_resource type="Texture2D" uid="uid://dd54dkv1r0lie" path="res://Assets/Act 1/parallax-2.png" id="5_dkfx4"]
+[ext_resource type="Texture2D" uid="uid://dutishg6ayb2k" path="res://Assets/Act 1/parallax-3.png" id="6_trind"]
+[ext_resource type="PackedScene" uid="uid://ceadbn74ycnj6" path="res://Scenes/Player/player.tscn" id="8_0wr47"]
+
+[sub_resource type="Environment" id="Environment_380g0"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.89
+glow_bloom = 0.05
+glow_hdr_scale = 2.59
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trind"]
+size = Vector2(2666, 158)
+
+[node name="Level1" type="Node2D" unique_id=434781986]
+script = ExtResource("1_wx7h4")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1147655352]
+environment = SubResource("Environment_380g0")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1863397960]
+position = Vector2(640, 361)
+position_smoothing_speed = 1.53
+
+[node name="Act1Bg" type="Sprite2D" parent="Camera2D" unique_id=393607938]
+z_index = -1024
+position = Vector2(0, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("1_jhd6h")
+
+[node name="Stars" type="Node2D" parent="Camera2D" unique_id=1966505875]
+position = Vector2(-640, -361)
+
+[node name="Star4" parent="Camera2D/Stars" unique_id=1172109284 instance=ExtResource("2_vo1w2")]
+position = Vector2(884, 76)
+
+[node name="Star5" parent="Camera2D/Stars" unique_id=417481434 instance=ExtResource("2_vo1w2")]
+position = Vector2(60, 44)
+
+[node name="Star3" parent="Camera2D/Stars" unique_id=326785105 instance=ExtResource("2_vo1w2")]
+position = Vector2(700, 191)
+
+[node name="Star2" parent="Camera2D/Stars" unique_id=1074976620 instance=ExtResource("2_vo1w2")]
+position = Vector2(448, 76)
+
+[node name="Star6" parent="Camera2D/Stars" unique_id=1124219552 instance=ExtResource("2_vo1w2")]
+position = Vector2(1216, 191)
+
+[node name="Star" parent="Camera2D/Stars" unique_id=1822274529 instance=ExtResource("2_vo1w2")]
+position = Vector2(252, 237)
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=378886056]
+scroll_scale = Vector2(0.4, 0.4)
+
+[node name="Parallax1" type="Sprite2D" parent="Parallax2D" unique_id=1569062409]
+position = Vector2(640, 360)
+scale = Vector2(2, 2)
+texture = ExtResource("2_pu8r1")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=2115162091]
+scroll_scale = Vector2(0.7, 0.7)
+
+[node name="Parallax2" type="Sprite2D" parent="Parallax2D2" unique_id=513695083]
+position = Vector2(640, 299)
+scale = Vector2(2, 2)
+texture = ExtResource("5_dkfx4")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1455827000]
+scroll_scale = Vector2(0.8, 0.8)
+
+[node name="Parallax3" type="Sprite2D" parent="Parallax2D3" unique_id=1306844117]
+modulate = Color(0.2231029, 0.2231029, 0.22310287, 1)
+position = Vector2(640, 289)
+scale = Vector2(2, 2)
+texture = ExtResource("6_trind")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=707145117]
+color = Color(0.6157592, 0.6112571, 0.31944856, 1)
+energy = 0.77
+blend_mode = 1
+
+[node name="Floor" type="RigidBody2D" parent="." unique_id=2031764038]
+position = Vector2(1216, 191)
+mass = 1000.0
+gravity_scale = 0.0
+
+[node name="SurfaceBeta" type="Sprite2D" parent="Floor" unique_id=2123267278]
+position = Vector2(-576, 451)
+scale = Vector2(2, 2)
+texture = ExtResource("3_380g0")
+
+[node name="SurfaceBeta2" type="Sprite2D" parent="Floor" unique_id=2108893179]
+position = Vector2(704, 451)
+scale = Vector2(2, 2)
+texture = ExtResource("3_380g0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=43944225]
+position = Vector2(108, 452)
+shape = SubResource("RectangleShape2D_trind")
+
+[node name="CharacterBody2D" parent="Floor" unique_id=929789600 instance=ExtResource("8_0wr47")]
+position = Vector2(-1064, 212)

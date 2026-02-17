@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ceadbn74ycnj6"]
+
+[ext_resource type="Script" uid="uid://cwaw0p0x7nk4q" path="res://Scripts/Player/player.gd" id="1_a3d8c"]
+[ext_resource type="Texture2D" uid="uid://cb0jp6in1l3f" path="res://Assets/Intro/godot.png" id="1_uvnfx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a3d8c"]
+radius = 8.0
+height = 18.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=929789600]
+script = ExtResource("1_a3d8c")
+
+[node name="Godot" type="Sprite2D" parent="." unique_id=670479463]
+position = Vector2(1.0000038, -74)
+scale = Vector2(0.13593751, 0.22925347)
+texture = ExtResource("1_uvnfx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1402844866]
+position = Vector2(0, -9)
+shape = SubResource("CapsuleShape2D_a3d8c")

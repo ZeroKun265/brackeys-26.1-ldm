@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ba5swxo8d6ijd"]
+
+[ext_resource type="Texture2D" uid="uid://sqrt5g5c0qkg" path="res://Assets/Act 1/star.png" id="1_mk2cd"]
+
+[sub_resource type="Gradient" id="Gradient_mk2cd"]
+offsets = PackedFloat32Array(0, 0.4028169)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3tltn"]
+gradient = SubResource("Gradient_mk2cd")
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Star" type="Node2D" unique_id=1172109284]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=566647906]
+texture = ExtResource("1_mk2cd")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=272340619]
+color = Color(0.85526735, 0.70530784, 0.68766487, 1)
+energy = 2.67
+range_z_min = -1000
+texture = SubResource("GradientTexture2D_3tltn")
+texture_scale = 19.4

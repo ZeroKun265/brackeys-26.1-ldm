@@ -9,5 +9,5 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# temporary
-	camera.translate(Vector2(50*delta, 0))
+	# camera.translate(Vector2(50*delta, 0))
 	pass

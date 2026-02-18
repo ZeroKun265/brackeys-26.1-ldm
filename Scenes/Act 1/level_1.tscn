@@ -28,37 +28,6 @@ script = ExtResource("1_wx7h4")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1147655352]
 environment = SubResource("Environment_380g0")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1863397960]
-position = Vector2(640, 361)
-position_smoothing_speed = 1.53
-
-[node name="Act1Bg" type="Sprite2D" parent="Camera2D" unique_id=393607938]
-z_index = -1024
-position = Vector2(0, -1)
-scale = Vector2(2, 2)
-texture = ExtResource("1_jhd6h")
-
-[node name="Stars" type="Node2D" parent="Camera2D" unique_id=1966505875]
-position = Vector2(-640, -361)
-
-[node name="Star4" parent="Camera2D/Stars" unique_id=1172109284 instance=ExtResource("2_vo1w2")]
-position = Vector2(884, 76)
-
-[node name="Star5" parent="Camera2D/Stars" unique_id=417481434 instance=ExtResource("2_vo1w2")]
-position = Vector2(60, 44)
-
-[node name="Star3" parent="Camera2D/Stars" unique_id=326785105 instance=ExtResource("2_vo1w2")]
-position = Vector2(700, 191)
-
-[node name="Star2" parent="Camera2D/Stars" unique_id=1074976620 instance=ExtResource("2_vo1w2")]
-position = Vector2(448, 76)
-
-[node name="Star6" parent="Camera2D/Stars" unique_id=1124219552 instance=ExtResource("2_vo1w2")]
-position = Vector2(1216, 191)
-
-[node name="Star" parent="Camera2D/Stars" unique_id=1822274529 instance=ExtResource("2_vo1w2")]
-position = Vector2(252, 237)
-
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=378886056]
 scroll_scale = Vector2(0.4, 0.4)
 
@@ -116,3 +85,35 @@ shape = SubResource("RectangleShape2D_trind")
 modulate = Color(0.52655333, 0.41899824, 0.27783233, 1)
 position = Vector2(152, 403)
 scale = Vector2(2, 2)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1863397960]
+position = Vector2(244, -21)
+scale = Vector2(0.5, 0.5)
+position_smoothing_speed = 1.53
+
+[node name="Act1Bg" type="Sprite2D" parent="CharacterBody2D/Camera2D" unique_id=393607938]
+z_index = -1024
+position = Vector2(0, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("1_jhd6h")
+
+[node name="Stars" type="Node2D" parent="CharacterBody2D/Camera2D" unique_id=1966505875]
+position = Vector2(-640, -361)
+
+[node name="Star4" parent="CharacterBody2D/Camera2D/Stars" unique_id=1172109284 instance=ExtResource("2_vo1w2")]
+position = Vector2(884, 76)
+
+[node name="Star5" parent="CharacterBody2D/Camera2D/Stars" unique_id=417481434 instance=ExtResource("2_vo1w2")]
+position = Vector2(60, 44)
+
+[node name="Star3" parent="CharacterBody2D/Camera2D/Stars" unique_id=326785105 instance=ExtResource("2_vo1w2")]
+position = Vector2(700, 191)
+
+[node name="Star2" parent="CharacterBody2D/Camera2D/Stars" unique_id=1074976620 instance=ExtResource("2_vo1w2")]
+position = Vector2(448, 76)
+
+[node name="Star6" parent="CharacterBody2D/Camera2D/Stars" unique_id=1124219552 instance=ExtResource("2_vo1w2")]
+position = Vector2(1216, 191)
+
+[node name="Star" parent="CharacterBody2D/Camera2D/Stars" unique_id=1822274529 instance=ExtResource("2_vo1w2")]
+position = Vector2(252, 237)

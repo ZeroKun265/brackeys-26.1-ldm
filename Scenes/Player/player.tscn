@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://ceadbn74ycnj6"]
 
 [ext_resource type="Script" uid="uid://cwaw0p0x7nk4q" path="res://Scripts/Player/player.gd" id="1_a3d8c"]
-[ext_resource type="Texture2D" uid="uid://cb0jp6in1l3f" path="res://Assets/Intro/godot.png" id="1_uvnfx"]
+[ext_resource type="Texture2D" uid="uid://2gcluds0k1cl" path="res://Assets/Player/Wheels.png" id="2_dd0ac"]
+[ext_resource type="Texture2D" uid="uid://i7raaki2akm2" path="res://Assets/Player/Arm.png" id="3_0u5uq"]
+[ext_resource type="Texture2D" uid="uid://dxfcj561t76g2" path="res://Assets/Player/Body.png" id="4_jlvik"]
+[ext_resource type="Texture2D" uid="uid://c4o06g64cnt6n" path="res://Assets/Player/Neck.png" id="5_gk6dx"]
+[ext_resource type="Texture2D" uid="uid://b4y1dnefu3op0" path="res://Assets/Player/Head.png" id="6_jhyir"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a3d8c"]
 radius = 8.0
@@ -10,11 +14,31 @@ height = 18.0
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=929789600]
 script = ExtResource("1_a3d8c")
 
-[node name="Godot" type="Sprite2D" parent="." unique_id=670479463]
-position = Vector2(1.0000038, -74)
-scale = Vector2(0.13593751, 0.22925347)
-texture = ExtResource("1_uvnfx")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1402844866]
 position = Vector2(0, -9)
 shape = SubResource("CapsuleShape2D_a3d8c")
+
+[node name="Wheels" type="Sprite2D" parent="." unique_id=1674719943]
+position = Vector2(0, -32)
+texture = ExtResource("2_dd0ac")
+
+[node name="Body" type="Node2D" parent="Wheels" unique_id=1920807377]
+position = Vector2(5.465, -1)
+
+[node name="Arm" type="Sprite2D" parent="Wheels/Body" unique_id=1928443028]
+texture = ExtResource("3_0u5uq")
+
+[node name="Body" type="Sprite2D" parent="Wheels/Body" unique_id=286446856]
+texture = ExtResource("4_jlvik")
+
+[node name="Neck" type="Sprite2D" parent="Wheels/Body/Body" unique_id=1075047266]
+position = Vector2(-2, 0.5)
+scale = Vector2(1, 0.984375)
+texture = ExtResource("5_gk6dx")
+
+[node name="Head" type="Sprite2D" parent="Wheels/Body/Body/Neck" unique_id=720499857]
+position = Vector2(-2.9999998, -12.698414)
+scale = Vector2(1, 1.0158731)
+texture = ExtResource("6_jhyir")
+centered = false
+offset = Vector2(-26.13, -20.975)

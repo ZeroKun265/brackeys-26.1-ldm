@@ -17,10 +17,10 @@ glow_bloom = 0.05
 glow_hdr_scale = 2.59
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wr47"]
-size = Vector2(2099.25, 469)
+size = Vector2(1999.625, 469)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trind"]
-size = Vector2(1173.25, 365)
+size = Vector2(2687.25, 365)
 
 [node name="Level1" type="Node2D" unique_id=434781986]
 script = ExtResource("1_wx7h4")
@@ -90,8 +90,8 @@ energy = 0.77
 blend_mode = 1
 
 [node name="Surface2" type="Sprite2D" parent="." unique_id=1970665871]
-position = Vector2(2423, 361)
-scale = Vector2(4, 4)
+position = Vector2(4167, 540)
+scale = Vector2(2, 2)
 texture = ExtResource("7_0wr47")
 
 [node name="Floor 2" type="RigidBody2D" parent="." unique_id=1315378652]
@@ -100,7 +100,7 @@ mass = 1000.0
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor 2" unique_id=1770686789]
-position = Vector2(-118.375, 462.5)
+position = Vector2(1356.8125, 461)
 shape = SubResource("RectangleShape2D_0wr47")
 
 [node name="Floor 1" type="RigidBody2D" parent="." unique_id=2031764038]
@@ -109,7 +109,7 @@ mass = 1000.0
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor 1" unique_id=43944225]
-position = Vector2(-627.625, 600.5)
+position = Vector2(129.375, 600.5)
 shape = SubResource("RectangleShape2D_trind")
 
 [node name="CharacterBody2D" parent="." unique_id=929789600 instance=ExtResource("8_0wr47")]

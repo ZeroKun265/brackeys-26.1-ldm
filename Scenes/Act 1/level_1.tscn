@@ -16,6 +16,9 @@ glow_intensity = 0.89
 glow_bloom = 0.05
 glow_hdr_scale = 2.59
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2xd3"]
+size = Vector2(776, 659.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wr47"]
 size = Vector2(1999.625, 469)
 
@@ -24,6 +27,45 @@ size = Vector2(2687.25, 365)
 
 [node name="Level1" type="Node2D" unique_id=434781986]
 script = ExtResource("1_wx7h4")
+
+[node name="Stars" type="Node2D" parent="." unique_id=1966505875]
+z_index = -107
+
+[node name="Star4" parent="Stars" unique_id=1172109284 instance=ExtResource("2_vo1w2")]
+position = Vector2(884, 76)
+
+[node name="Star5" parent="Stars" unique_id=417481434 instance=ExtResource("2_vo1w2")]
+position = Vector2(60, 44)
+
+[node name="Star3" parent="Stars" unique_id=326785105 instance=ExtResource("2_vo1w2")]
+position = Vector2(700, 191)
+
+[node name="Star2" parent="Stars" unique_id=1074976620 instance=ExtResource("2_vo1w2")]
+position = Vector2(448, 76)
+
+[node name="Star6" parent="Stars" unique_id=1124219552 instance=ExtResource("2_vo1w2")]
+position = Vector2(1216, 191)
+
+[node name="Star" parent="Stars" unique_id=1822274529 instance=ExtResource("2_vo1w2")]
+position = Vector2(252, 237)
+
+[node name="Act1Bg" type="Sprite2D" parent="." unique_id=393607938]
+z_index = -1024
+texture_repeat = 2
+position = Vector2(1000, 360)
+scale = Vector2(2, 2)
+texture = ExtResource("1_jhd6h")
+region_enabled = true
+region_rect = Rect2(0, 0, 1000, 360)
+
+[node name="Act1Bg" type="Sprite2D" parent="Act1Bg" unique_id=567393362]
+z_index = -1024
+texture_repeat = 2
+position = Vector2(0.5, -505.25)
+scale = Vector2(1, -1.8069445)
+texture = ExtResource("1_jhd6h")
+region_enabled = true
+region_rect = Rect2(0, 0, 1000, 360)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1147655352]
 environment = SubResource("Environment_380g0")
@@ -58,10 +100,24 @@ color = Color(0.6157592, 0.6112571, 0.31944856, 1)
 energy = 0.77
 blend_mode = 1
 
+[node name="Surface3" type="Sprite2D" parent="." unique_id=1109512902]
+position = Vector2(12500, 540)
+scale = Vector2(-2, 2)
+texture = ExtResource("7_0wr47")
+
 [node name="Surface2" type="Sprite2D" parent="." unique_id=1970665871]
 position = Vector2(4167, 540)
 scale = Vector2(2, 2)
 texture = ExtResource("7_0wr47")
+
+[node name="Invisible wall left" type="RigidBody2D" parent="." unique_id=934398954]
+position = Vector2(4864, 764)
+mass = 1000.0
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Invisible wall left" unique_id=503512546]
+position = Vector2(-4703, -491)
+shape = SubResource("RectangleShape2D_u2xd3")
 
 [node name="Floor 2" type="RigidBody2D" parent="." unique_id=1315378652]
 position = Vector2(2432, 382)
@@ -83,37 +139,15 @@ shape = SubResource("RectangleShape2D_trind")
 
 [node name="CharacterBody2D" parent="." unique_id=929789600 instance=ExtResource("8_0wr47")]
 modulate = Color(0.52655333, 0.41899824, 0.27783233, 1)
-position = Vector2(152, 403)
+position = Vector2(628, 609)
 scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1863397960]
-position = Vector2(244, -21)
+position = Vector2(61, -117.5)
 scale = Vector2(0.5, 0.5)
+offset = Vector2(0.115, 0)
+limit_left = 0
+limit_top = -9999960
+limit_right = 10000029
+limit_bottom = 720
 position_smoothing_speed = 1.53
-
-[node name="Act1Bg" type="Sprite2D" parent="CharacterBody2D/Camera2D" unique_id=393607938]
-z_index = -1024
-position = Vector2(0, -1)
-scale = Vector2(2, 2)
-texture = ExtResource("1_jhd6h")
-
-[node name="Stars" type="Node2D" parent="CharacterBody2D/Camera2D" unique_id=1966505875]
-position = Vector2(-640, -361)
-
-[node name="Star4" parent="CharacterBody2D/Camera2D/Stars" unique_id=1172109284 instance=ExtResource("2_vo1w2")]
-position = Vector2(884, 76)
-
-[node name="Star5" parent="CharacterBody2D/Camera2D/Stars" unique_id=417481434 instance=ExtResource("2_vo1w2")]
-position = Vector2(60, 44)
-
-[node name="Star3" parent="CharacterBody2D/Camera2D/Stars" unique_id=326785105 instance=ExtResource("2_vo1w2")]
-position = Vector2(700, 191)
-
-[node name="Star2" parent="CharacterBody2D/Camera2D/Stars" unique_id=1074976620 instance=ExtResource("2_vo1w2")]
-position = Vector2(448, 76)
-
-[node name="Star6" parent="CharacterBody2D/Camera2D/Stars" unique_id=1124219552 instance=ExtResource("2_vo1w2")]
-position = Vector2(1216, 191)
-
-[node name="Star" parent="CharacterBody2D/Camera2D/Stars" unique_id=1822274529 instance=ExtResource("2_vo1w2")]
-position = Vector2(252, 237)
